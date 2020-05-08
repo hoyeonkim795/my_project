@@ -1,0 +1,40 @@
+/* 01_nav.css */
+/* 아래에 코드를 작성해 주세요. */
+
+.box{
+  background-color: black;
+  position:fixed;
+  top:0; 
+  left:0; 
+  width:100%; 
+  height: 80px;
+
+}
+.box_fixed{
+    position: fixed; 
+    top: 0px; 
+}
+.box1, .box2{
+  display: inline-block;
+  
+}
+.box2{
+  float:right;  
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+ul{
+  height: 80px;
+  display:table-cell;
+  vertical-align: middle;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  list-style: none;     
+}
+
+li{   
+  color:white;
+  float: left;
+  margin-right: 32px;
+}
+

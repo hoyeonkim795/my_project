@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+    }
+    .layout {
+      display: flex;
+      height: 100vh;
+      flex-direction: column;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      display: inline;
+    }
+    nav {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      background-color: gray;
+    }
+    .main {
+      display: flex;
+      background-color: aquamarine;
+    }
+    aside {
+      width: 300px;
+    }
+    footer {
+      margin-top: auto;
+      height: 100px;
+      background: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <nav>
+      <a href="">로고</a>
+      <ul>
+        <li>home</li>
+        <li>about</li>
+        <li>login</li>
+      </ul>
+    </nav>
+    <div class="main">
+      <aside>왼쪽</aside>
+      <section>
+        <article>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea, pariatur rerum animi sed atque expedita, reiciendis id ducimus autem eaque non, accusantium saepe magnam dolore mollitia adipisci perspiciatis possimus eveniet!</article>
+        <article>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, vel quibusdam deserunt accusamus porro sunt enim rem. Praesentium architecto eveniet commodi sint obcaecati numquam, aperiam animi est itaque at velit?</article>
+      </section>
+    </div>
+    <footer>푸터</footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Flex</title>
+	<!-- box styling -->
+	<link rel="stylesheet" href="style.css">
+	<style>
+		/* 아래에 flex 관련 CSS를 통해 개념을 익혀봅시다. */
+    .container {
+      display: flex;
+      height: 30vh;
+    }
+    .a-stretch {
+      align-items: stretch;
+    }
+    .a-center {
+      align-items: center;
+    }
+    .a-start {
+      align-items: flex-start;
+    }
+    .a-end {
+      align-items: flex-end;
+    }
+    .a-baseline {
+      align-items: baseline;
+    }
+    .item4 {
+      font-size: 20px;
+    }
+    .item5 {
+      font-size: 100px;
+    }
+    .item6 {
+      font-size: 64px;
+    }
+	</style>
+</head>
+<body>
+	<div class="container a-stretch">
+		<div class="item item1">1</div>
+		<div class="item item2">2</div>
+		<div class="item item3">3</div>
+  </div>
+  <div class="container a-center">
+		<div class="item item1">1</div>
+		<div class="item item2">2</div>
+		<div class="item item3">3</div>
+  </div>
+  <div class="container a-start">
+		<div class="item item1">1</div>
+		<div class="item item2">2</div>
+		<div class="item item3">3</div>
+  </div>
+  <div class="container a-end">
+		<div class="item item1">1</div>
+		<div class="item item2">2</div>
+		<div class="item item3">3</div>
+  </div>
+  <div class="container a-baseline">
+		<div class="item item4">1</div>
+		<div class="item item5">2</div>
+		<div class="item item6">3</div>
+	</div>
+</body>
+</html>

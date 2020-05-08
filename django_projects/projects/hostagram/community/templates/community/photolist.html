@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>hostagram</h1>
+{% for photolist in photolists %}
+{% csrf_token %}
+<h4>{{ photolist.username }}</h4>
+<img src = "{{ photolist.image.url }}" alt="img">
+<h4>{{ photolist.content }}</h4>
+<h4>{{ photolist.created_at }}</h4>
+{% endfor %}
+
+{% endblock %}

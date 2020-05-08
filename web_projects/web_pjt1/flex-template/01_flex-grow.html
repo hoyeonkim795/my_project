@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Flex</title>
+	<!-- box styling -->
+	<link rel="stylesheet" href="style.css">
+	<style>
+		/* 아래에 flex 관련 CSS를 통해 개념을 익혀봅시다. */
+    .container {
+			display: flex;
+		}
+    .item {
+      width: 100px;
+    }
+    .item1 {
+      /* flex-grow 기본값 0 
+      남은 너비를 각각 비율로 나눠서 가져감!
+      */
+      flex-grow: 0;
+    }
+    .item2 {
+      /* 700 * 2 / 5 */
+      flex-grow: 2;
+    }
+    .item3 {
+      /* 700 * 3 / 5 */
+      flex-grow: 3;
+    }
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="item item1">1</div>
+		<div class="item item2">2</div>
+		<div class="item item3">3</div>
+	</div>
+</body>
+</html>

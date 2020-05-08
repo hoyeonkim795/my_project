@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- 같은 뷰로 보내고 있음-->
+{% if request.resolver_match.url_name == 'create' %}
+    <h1>CREATE</h1>
+{% else %}
+    <h1>UPDATE</h1>
+{% endif %}
+
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">CREATE</button>
+
+</form>
+{% if request.resolver_match.url_name == 'create' %}
+    <a href="{% url 'community:photolist' %}">back</a>
+
+{% endif %}
+
+
+{% endblock %}

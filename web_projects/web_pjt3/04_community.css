@@ -1,0 +1,32 @@
+/* 04_community.css */
+/* 아래에 코드를 작성해 주세요. */
+body {
+    width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+h1 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 170px;
+}
+hr{
+    width: 100px;
+    border: 5px solid orange;
+}
+article{
+    border-bottom-style: solid;
+    border-color: grey;
+}
+.user{
+    margin-left:auto; 
+    margin-right:0;
+    width:170px;
+}
+
+.id{
+    color:green;
+}
+.date{
+    color:grey;
+}

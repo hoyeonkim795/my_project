@@ -1,0 +1,15 @@
+/* 02_footer.css */
+/* 아래에 코드를 작성해 주세요. */
+.foot{
+    background-color: dimgrey;
+    position:fixed;
+    bottom:0; 
+    left:0; 
+    width:100%; 
+    height: 60px;
+    align-items: bottom;
+    display:table-cell;
+    vertical-align: middle;
+    color: white;
+    text-align: center;
+}
