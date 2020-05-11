@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>게시글 모음</h2>
+<ul>
+    {% for review in reviews %}
+    <li><h3>리뷰의 제목 : <a href="/community/review_detail/{{ review.pk }}">{{ review.title }}</a></h3></li>
+    <li><h3>리뷰의 내용 : {{ review.content }}</h3></li>
+    <li><h3>리뷰의 평점 : {{ review.rank }}</h3></li>
+    <li><h3>리뷰가 최초 작성된 시간 : {{ review.created_at }}</h3></li>
+    <!--<li><h3>리뷰가 최종 수정된 시간 : {{ review.updated_at }}</h3></li>-->
+    {% endfor %}
+</ul>
+{% endblock %}

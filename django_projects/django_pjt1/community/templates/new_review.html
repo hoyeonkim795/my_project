@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>글작성</h2>
+<form action="/community/create_review/">
+    리뷰의 제목 : <input type="text" name="title"></br>
+    리뷰의 내용 : <textarea type="text" name="content"></textarea></br>
+    리뷰의 평점 : <input type="number" name="rank"></br>
+    <input type="submit" value="게시글 작성"></br>
+    <hr>
+    <a href="/community/">BACK</a>
+</form>
+
+{% endblock %}

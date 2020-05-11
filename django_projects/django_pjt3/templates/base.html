@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel='stylesheet' href="{% static 'bootstrap/bootstrap.min.css' %}">
+    <link rel='stylesheet' href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <style>
+    body{
+        font-family: 'Nanum Pen Script', cursive;
+        background-color:#FDF7FB;
+    }
+    .navbar {
+
+        background-color: white;
+        padding-left:40px;
+        padding-right:40px;
+
+    }
+
+
+
+    {% block css %}
+    {% endblock %}
+    </style>
+
+
+
+</head>
+<body>
+    <nav class="navbar">
+
+            <h1><a class ="navbar-brand" href="{% url 'community:review_list' %}"> 전체글보기 </a><a class ="navbar-brand"  href="{% url 'community:create' %}">글작성</a></h1>
+            {% if user.is_authenticated %}
+            <h1 class ="user">{{ user.username }}님 반갑습니다!</h1>
+            <a class ="navbar-brand" href="{% url 'accounts:logout' %}">로그아웃</a>
+            {% else %}
+            <a class ="navbar-brand" href="{% url 'accounts:login' %}">로그인</a>
+            <a class ="navbar-brand" href="{% url 'accounts:signup' %}">회원 가입</a>
+            {% endif %}
+
+
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+    <script src="{% static 'bootstrap/bootstrap.min.js' %}"></script>
+
+
+</body>
+</html>

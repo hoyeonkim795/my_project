@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- 같은 뷰로 보내고 있음-->
+{% if request.resolver_match.url_name == 'create' %}
+    <h1>CREATE</h1>
+{% else %}
+    <h1>UPDATE</h1>
+{% endif %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {% buttons %}
+        <button type="submit">CREATE</button>
+    {% endbuttons %}
+</form>
+
+
+{% endblock %}
