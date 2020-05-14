@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block css %}
+    .detail{
+        position:absolute;
+        left:50%;
+        margin-left:-500px;
+        margin-top:50px;
+        border:1px solid;
+        padding:10px;
+        width: 1000px;
+        font-size: medium;
+
+
+    }
+    .editdelete{
+    	display:inline-block;
+    }
+
+
+{% endblock %}
+{% block content %}
+<div class='detail'>
+<h2 style="text-align:center">{{ review.title }}</h2>
+<hr>
+
+<P>영화 제목: {{ review.movie_title }}</P>
+<P>영화 평점: {{ review.rank }}</P>
+{% if review.image %}
+	<p><img src = "{{ review.image.url }}" alt="img"></p>
+{% endif %}
+<p>글 내용:{{ review.content }}</p>
+<p>글 생성시각: {{ review.created_at }}</p>
+<p>글 수정시각: {{ review.updated_at }}</p>
+<p>글 작성자 : {{ review.user }} <a href="{% url 'accounts:profile' review.user %}"> profile 보기 </a></p>
+
+{% include 'community/_like.html' %}
+<div class="editdelete">
+{% if request.user == review.user %}
+	<a href="{% url 'community:review_update' review.pk %}" class="btn btn-outline-warning">EDIT</a>
+
+
+<form action="{% url 'community:review_delete' review.pk %}" method="POST">
+    {% csrf_token %}
+
+    	<button class="btn btn-outline-danger">delete</button>
+</form>
+{% endif %}
+</div>
+
+<a href="{% url 'community:movie_detail' review.movie.pk %}" class="btn btn-outline-warning">BACK</a>
+
+<h3 class="comments">댓글목록</h3>
+
+	{% for comment in comments %}
+		<div >{{ comment.user }}: {{ comment.content }}
+		{% if request.user == comment.user %}
+			<form action="{% url 'community:comments_delete' review.pk comment.pk %}" method="POST" style="display:inline">
+				{% csrf_token %}
+
+					<button class="btn btn-outline-info">댓글삭제</button>
+
+
+
+			</form>
+
+
+		{% endif %}
+		</div>
+	{% endfor %}
+	<hr>
+	{% if user.is_authenticated %}
+	<div style= "display:inline">
+	<form action="{% url 'community:comments_create' review.pk %}" method="POST" >
+		{% csrf_token %}
+		{{ comment_form.as_p }}
+		<button class="btn btn-outline-info">댓글작성</button>
+	</form>
+	</div>
+	{% endif %}
+</div>
+{% endblock %}

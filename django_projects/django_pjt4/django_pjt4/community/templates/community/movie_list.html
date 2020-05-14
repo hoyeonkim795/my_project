@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    .movie_list{
+        position:absolute;
+        left:50%;
+        margin-left:-500px;
+        margin-top:50px;
+        border:1px solid;
+        padding:10px;
+        width: 1000px;
+        text-align:center;
+        background-color:#F6F6F6;
+
+    }
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class ='movie_list'>
+    {% for movie in movies %}
+    {{ movie.movie_title }}
+    <p class ="poster"><a href="{% url 'community:movie_detail' movie.pk %}"><img src = "{{ movie.poster }}" alt="img" width="600" height="600"></a></p>
+    {% if request.user.is_superuser %}
+    	<a href="{% url 'community:movie_update' movie.pk %}" class="btn btn-outline-warning">EDIT</a>
+        <form action="{% url 'community:movie_delete' movie.pk %}" method="POST">
+        {% csrf_token %}
+    	    	<button class="btn btn-outline-danger">delete</button>
+        </form>
+    {% endif %}
+    <hr>
+    {% endfor %}
+
+
+</div>
+
+
+
+{% endblock %}

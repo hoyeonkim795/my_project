@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block css %}
+    .top{
+        margin-top:50px;
+        text-align:center;
+    }
+
+
+    form{
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-top: 50px;
+
+
+    }
+{% endblock %}
+
+{% block content %}
+<!-- 같은 뷰로 보내고 있음-->
+{% if request.resolver_match.url_name == 'review_create' %}
+    <h1 class="top">리뷰를 작성해주세요</h1>
+{% elif request.resolver_match.url_name == 'review_update' %}
+    <h1 class="top">리뷰를 수정해주세요</h1>
+{% elif request.resolver_match.url_name == 'movie_create' %}
+    <h1 class="top">영화를 작성해주세요</h1>
+{% elif request.resolver_match.url_name == 'movie_update' %}
+    <h1 class="top">영화를 수정해주세요</h1>
+{% else %}
+    <h1 class="top">영화를 수정해주세요</h1>
+{% endif %}
+
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+        <button type="submit" class="btn btn-outline-danger" style="position:absolute; left:40%;">CREATE</button>
+    {% endbuttons %}
+</form>
+{% if request.resolver_match.url_name == 'review_create' %}
+<a href="{% url 'community:movie_detail' movie.pk %}" class="btn btn-outline-danger" style="position:relative; left:50%;">BACK-</a>
+{% elif request.resolver_match.url_name == 'movie_create' %}
+<a href="{% url 'community:movie_list' %}" class="btn btn-outline-danger" style="position:relative; left:50%;">BACK-</a>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block css %}
+    .detail{
+        position:absolute;
+        left:50%;
+        margin-left:-500px;
+        margin-top:50px;
+        border:1px solid;
+        padding:10px;
+        width: 1000px;
+        font-size: medium;
+
+
+    }
+    .editdelete{
+    	display:inline-block;
+    }
+
+
+{% endblock %}
+{% block content %}
+<div class='detail'>
+<h2 style="text-align:center">{{ movie.movie_title }}</h2>
+<hr>
+<p>영화 관리자 평점: {{ movie.rank }}</p>
+<P>영화 회원들 평균 평점: {{ rank }}</P>
+<p>남성 여성 평점</p>
+<p>연령대 별 평점</p>
+<div>
+<div style = "float:left">{{ male_rank }}</div>
+<div style = "float:left"><img src="https://slownews.kr/wp-content/uploads/2015/07/icon-man.png" alt="" width="50px" height="50px"></div>
+
+<div style = "float:left"><img src="https://slownews.kr/wp-content/uploads/2015/07/icon-woman.png" alt="" width="50px" height="50px"></div>
+<div style = "float:left">{{ female_rank }}</div>
+</div>
+<br>
+<br>
+<br>
+{% for key,value in total_rank.items %}
+    <p>{{ key }}</p>
+    <div class="progress">
+    <div class="progress-bar" role="progressbar" style="width: {{ value }}%;" aria-valuenow="{{ value }}" aria-valuemin="0" aria-valuemax="5">{{ value }}</div>
+    </div>
+{% endfor %}
+
+
+
+<p>영화 내용: {{ movie.content }}</p>
+<p><img src = "{{ movie.poster }}" alt="img" width="600" height="600"></p>
+
+<a href="{% url 'community:review_create' movie.pk %}" class="btn btn-outline-warning">리뷰 작성하기</a>
+<hr>
+<p>회원들의 영화 리뷰</p>
+<ol>
+{% for review in reviews %}
+
+<li><p><a href="{% url 'community:review_detail' review.pk %}" class="btn btn-dark">{{ review.title }}</a></p></li>
+
+{% endfor %}
+</ol>
+
+<a href="{% url 'community:movie_list' %}" class="btn btn-outline-warning">BACK</a>
+{% endblock %}

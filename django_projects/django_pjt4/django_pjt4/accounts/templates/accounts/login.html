@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block css %}
+    form{
+        position:absolute;
+        left:50%;
+        margin-left:-150px;
+        margin-top:50px;
+
+        width: 300px;
+
+    }
+{% endblock %}
+
+{% load bootstrap4 %}
+{% block content %}
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+
+        <button class="btn btn-info">Login</button>
+
+
+    </form>
+{% endblock %}

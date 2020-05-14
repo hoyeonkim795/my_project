@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ person.username }}의 프로필</h1>
+<p>팔로잉 : {{ person.followings.all|length }}</p>
+<p>팔로워 : {{ person.followers.all|length }}</p>
+
+
+{% if request.user != person %}
+    {% if request.user in person.followers.all %}
+    <a href="{% url 'accounts:follow' person.username %}">팔로우 취소</a>
+    {% else %}
+    <a href="{% url 'accounts:follow' person.username %}">팔로우</a>
+    {% endif %}
+{% endif %}
+
+{% endblock %}
