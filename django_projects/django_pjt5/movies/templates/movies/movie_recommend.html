@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% load bootstrap_pagination %}
+
+{% block css %}
+  .movie_list{
+
+    left:50%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:50px;
+    border:1px solid;
+    padding:10px;
+    width: 1000px;
+    text-align:center;
+    background-color:#F6F6F6;
+  }
+
+  p{
+    text-align:left;
+    font-size:X-large;
+  }
+
+  h1{
+    text-align:left;
+  }
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+
+
+  <h1 class="ml-5 mt-5">추천 영화!</h1>
+{% for movie in movies %}
+<div class="movie_list">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="poster"><a href="{% url 'movies:movie_detail' movie.pk %}"><img src="https://image.tmdb.org/t/p/w154{{ movie.poster_path }}" alt="img" ></a></div>
+      </div>
+      <div class="col-sm-9">
+        <h1>{{ movie.title }}</h1>
+        <P>영화 개봉일: {{ movie.release_date }}</P>
+        <p>영화 장르:
+        {% for genre in movie.genres.all %}
+        <span>{{ genre.name }} </span>
+        {% endfor %}</p>
+
+        {% if request.user.is_authenticated %}
+        {% endif %}
+        <a href="{% url 'movies:movie_detail' movie.pk %}"><button type="button" class="btn btn-primary  d-flex justify-content-left">자세히 보기</button></a>
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+{% endblock %}

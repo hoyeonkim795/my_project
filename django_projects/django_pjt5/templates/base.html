@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BASE</title>
+    <link rel='stylesheet' href="{% static 'bootstrap/bootstrap.min.css' %}">
+    <script src="https://kit.fontawesome.com/fe65b187fe.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel='stylesheet' href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+    body{
+        font-family: 'Nanum Pen Script', cursive;
+        background-color:#FDF7FB;
+    }
+    .navbar {
+
+        background-color: white;
+        padding-left:40px;
+        padding-right:40px;
+
+    }
+
+
+
+    {% block css %}
+    {% endblock %}
+    </style>
+
+</head>
+<body>
+    <nav class="navbar">
+
+
+        <h1><a class ="navbar-brand" href="{% url 'movies:movie_list' %}"> 전체 영화 보기 </a>
+        {% if request.user.is_superuser %}
+        <a class ="navbar-brand"  href="{% url 'movies:movie_create' %}">영화작성</a>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <h3 class ="user ml-auto">{{ user.username }}님 반갑습니다!</h3>
+        <a class ="navbar-brand ml-auto" href="{% url 'movies:movie_recommend' %}">추천받기</a>
+        <a class ="navbar-brand" href="{% url 'accounts:logout' %}">로그아웃</a>
+        {% else %}
+        <h3> </h3>
+        <a class ="navbar-brand ml-auto" href="{% url 'accounts:login' %}">로그인</a>
+        <a class ="navbar-brand" href="{% url 'accounts:signup' %}">회원 가입</a>
+        {% endif %}
+        </h1>
+
+
+    </nav>
+    {% block content %}
+    {% endblock %}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>

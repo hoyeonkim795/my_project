@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ person.username }}의 프로필</h1>
+<p>팔로잉 : {{ person.followings.all|length }} 명 </p>
+<p>팔로워 : <span id="follow-count-{{ person.username }}">{{ person.followers.all|length }}</span> 명</p>
+
+
+{% if request.user != person %}
+  {% if request.user in person.followers.all %}
+  <button class="follow-button" data-id="{{ person.username }}">팔로우 취소</button>
+  {% else %}
+  <button class="follow-button" data-id="{{ person.username }}">팔로우</button>
+  {% endif %}
+{% endif %}
+<script>
+  const followButtonList = document.querySelectorAll('.follow-button')
+  followButtonList.forEach(followButton => {
+    followButton.addEventListener('click', function(event) {
+      const personName = event.target.dataset.id
+      {% if user.is_authenticated %}
+        axios.get(`/accounts/${personName}/follow/`)
+          .then(response => {
+            document.querySelector(`#follow-count-${personName}`).innerText = response.data.count
+            if (response.data.followed) {
+              event.target.innerText = '팔로우 취소'
+            } else {
+              event.target.innerText = '팔로우'
+            }
+          })
+      {% else %}
+        alert('비로그인 사용자는 팔로우/언팔로우를 누를 수 없어요!!!')
+      {% endif %}
+    })
+  })
+</script>
+{% endblock %}

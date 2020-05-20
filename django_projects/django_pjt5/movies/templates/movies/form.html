@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block css %}
+    .top{
+        margin-top:50px;
+        text-align:center;
+    }
+
+
+    form{
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-top: 50px;
+
+
+    }
+{% endblock %}
+
+{% block content %}
+
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+        <button type="submit" class="btn btn-outline-danger" style="position:absolute; left:40%;">CREATE</button>
+    {% endbuttons %}
+</form>
+
+<a href="{% url 'movies:movie_list' %}" class="btn btn-outline-danger" style="position:relative; left:50%;">BACK-</a>
+
+
+{% endblock %}

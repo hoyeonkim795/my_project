@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% load bootstrap_pagination %}
+
+{% block css %}
+  .movie_list{
+    position:absolute;
+    left:50%;
+    margin-left:-500px;
+    margin-top:50px;
+    border:1px solid;
+    padding:10px;
+    width: 1000px;
+    text-align:center;
+    background-color:#F6F6F6;
+  }
+
+  p{
+    text-align:left;
+    font-size:X-large;
+  }
+
+  h1{
+    text-align:left;
+  }
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="movie_list">
+  {% for movie in page_obj %}
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="poster"><a href="{% url 'movies:movie_detail' movie.pk %}"><img src="https://image.tmdb.org/t/p/w154{{ movie.poster_path }}" alt="img" ></a></div>
+      </div>
+      <div class="col-sm-9">
+        <h1>{{ movie.title }}</h1>
+        <P>영화 개봉일: {{ movie.release_date }}</P>
+        <p>영화 장르:
+        {% for genre in movie.genres.all %}
+        <span>{{ genre.name }} </span>
+        {% endfor %}</p>
+
+        {% if request.user.is_authenticated %}
+          {% for genre in movie.genres.all %}
+            {% if user_genre == genre.pk %}
+              <h class="font-weight-bold">회원님이 좋아하는 장르의 영화입니다!!!!</h>
+            {% endif %}
+          {% endfor%}
+        {% endif %}
+        <a href="{% url 'movies:movie_detail' movie.pk %}"><button type="button" class="btn btn-primary  d-flex justify-content-left">자세히 보기</button></a>
+
+      </div>
+    </div>
+  </div>
+
+
+  <hr>
+  {% endfor %}
+  <div class="justify-content-center">
+  {% bootstrap_paginate page_obj range=10 show_prev_next="false" show_first_last="true" %}
+  </div>
+
+</div>
+
+
+
+{% endblock %}
