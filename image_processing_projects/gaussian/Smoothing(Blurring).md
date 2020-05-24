@@ -105,7 +105,7 @@
 
    - 결과 이미지에서 질감있는 부분만 블러링 되고 에지 부분은 보존됨
 
-     ![image-20200523165020899](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20200523165020899.png
+     ![bilateral filtering](\bilateral filtering.PNG)
 
      ```python
      import cv2
