@@ -45,5 +45,38 @@
 
 ### 화면 구성
 
-#### 홈화면
+#### Home
 
+![image-20200622025238415](C:\Users\hy940\AppData\Roaming\Typora\typora-user-images\image-20200622025238415.png)
+
+#### Login
+
+![image-20200622025300693](C:\Users\hy940\AppData\Roaming\Typora\typora-user-images\image-20200622025300693.png)
+
+#### MovieRecommend
+
+![image-20200622025428991](C:\Users\hy940\AppData\Roaming\Typora\typora-user-images\image-20200622025428991.png)
+
+![image-20200622025359258](C:\Users\hy940\AppData\Roaming\Typora\typora-user-images\image-20200622025359258.png)
+
+#### Profile
+
+![image-20200622025501491](C:\Users\hy940\AppData\Roaming\Typora\typora-user-images\image-20200622025501491.png)
+
+#### MovieList 
+
+![image-20200622025538222](C:\Users\hy940\AppData\Roaming\Typora\typora-user-images\image-20200622025538222.png)
+
+#### MovieDetail
+
+![image-20200622025718313](C:\Users\hy940\AppData\Roaming\Typora\typora-user-images\image-20200622025718313.png)
+
+#### ReviewList
+
+![image-20200622025746122](C:\Users\hy940\AppData\Roaming\Typora\typora-user-images\image-20200622025746122.png)
+
+#### ReviewDetail
+
+![image-20200622025928996](C:\Users\hy940\AppData\Roaming\Typora\typora-user-images\image-20200622025928996.png)
+
+![image-20200622030006640](C:\Users\hy940\AppData\Roaming\Typora\typora-user-images\image-20200622030006640.png)
