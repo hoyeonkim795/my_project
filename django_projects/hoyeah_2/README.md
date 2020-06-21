@@ -47,36 +47,36 @@
 
 #### Home
 
-![image-20200622025238415](C:\Users\hy940\AppData\Roaming\Typora\typora-user-images\image-20200622025238415.png)
+![home](https://user-images.githubusercontent.com/60081282/85231755-d7cc2200-b434-11ea-843e-4b9319881261.PNG)
 
 #### Login
 
-![image-20200622025300693](C:\Users\hy940\AppData\Roaming\Typora\typora-user-images\image-20200622025300693.png)
+![로그인](https://user-images.githubusercontent.com/60081282/85231756-d995e580-b434-11ea-8eb4-7f5f9a8fe29a.PNG)
 
 #### MovieRecommend
 
-![image-20200622025428991](C:\Users\hy940\AppData\Roaming\Typora\typora-user-images\image-20200622025428991.png)
+![영화추천1](https://user-images.githubusercontent.com/60081282/85231758-dac71280-b434-11ea-8416-6fa1212b92d5.PNG)
 
-![image-20200622025359258](C:\Users\hy940\AppData\Roaming\Typora\typora-user-images\image-20200622025359258.png)
+![영화추천2](https://user-images.githubusercontent.com/60081282/85231760-dc90d600-b434-11ea-8c2d-dbe9491a6218.PNG)
 
 #### Profile
 
-![image-20200622025501491](C:\Users\hy940\AppData\Roaming\Typora\typora-user-images\image-20200622025501491.png)
+![프로필](https://user-images.githubusercontent.com/60081282/85231790-1235bf00-b435-11ea-9f80-e8b36b22256b.PNG)
 
 #### MovieList 
 
-![image-20200622025538222](C:\Users\hy940\AppData\Roaming\Typora\typora-user-images\image-20200622025538222.png)
+![movielist](https://user-images.githubusercontent.com/60081282/85231761-df8bc680-b434-11ea-87bc-3999dee55200.PNG)
 
 #### MovieDetail
 
-![image-20200622025718313](C:\Users\hy940\AppData\Roaming\Typora\typora-user-images\image-20200622025718313.png)
+![moviedetail](https://user-images.githubusercontent.com/60081282/85231767-e1558a00-b434-11ea-86cb-b78584920ae5.PNG)
 
 #### ReviewList
 
-![image-20200622025746122](C:\Users\hy940\AppData\Roaming\Typora\typora-user-images\image-20200622025746122.png)
+![reviewlist](https://user-images.githubusercontent.com/60081282/85231768-e31f4d80-b434-11ea-9a0e-78847a0409ac.PNG)
 
 #### ReviewDetail
 
-![image-20200622025928996](C:\Users\hy940\AppData\Roaming\Typora\typora-user-images\image-20200622025928996.png)
+![reviewdetail](https://user-images.githubusercontent.com/60081282/85231769-e4507a80-b434-11ea-80bc-7035427c0a28.PNG)
 
-![image-20200622030006640](C:\Users\hy940\AppData\Roaming\Typora\typora-user-images\image-20200622030006640.png)
+![reviewdetail2](https://user-images.githubusercontent.com/60081282/85231772-e61a3e00-b434-11ea-9b60-ab12d8bc4661.PNG)
