@@ -41,7 +41,7 @@
 
 ### 페이지 구성 및 기능
 
-![image-20200622024351169](C:\Users\hy940\AppData\Roaming\Typora\typora-user-images\image-20200622024351169.png)
+![페이지](https://user-images.githubusercontent.com/60081282/85231562-17920a00-b433-11ea-9a23-a0d133090649.PNG)
 
 ### 화면 구성
 
