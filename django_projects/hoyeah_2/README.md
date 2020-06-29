@@ -43,7 +43,11 @@
 
 ![페이지](https://user-images.githubusercontent.com/60081282/85231562-17920a00-b433-11ea-9a23-a0d133090649.PNG)
 
-### 화면 구성
+### 주요기능 코드
+
+
+
+### 화면 UI
 
 #### Home
 
